@@ -1,0 +1,80 @@
+.tweet {
+    background-color: #e5e5eeab; 
+    border: 1px solid #132f33; /* Borde de un color más oscuro para dar contraste */
+    padding: 5px;
+   
+    border-radius: 10px; /* Bordes redondeados para un efecto más suave */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-header{
+
+    background-color: #e5e5eeab; 
+    border: 1px solid #132f33; /* Borde de un color más oscuro para dar contraste */
+    padding: 5px;
+   
+    border-radius: 10px; /* Bordes redondeados para un efecto más suave */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+
+
+}
+
+.nav-link{
+
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.form-container {
+    border: 4px solid #ccc; /* Color del borde */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    background-color: #e5e5eeab;; /* Color de fondo */
+    width: 100%;
+}
+
+
+.form-container textarea {
+    margin-bottom: 1px; /* Espaciado entre campos */
+    padding: 3px;
+    border-radius: 5px; /* Bordes redondeados para campos */
+    border: 1px solid #ccc; /* Color del borde para campos */
+    width: 100%; /* Ancho completo de los campos */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total del campo */
+}
+
+.button-container {
+    display: flex; /* Habilitar flexbox */
+    justify-content: flex-end; /* Centrar a la derecha */ 
+}
+
+.post-submit {
+    background-color: #007BFF; /* Fondo celeste fuerte */
+    color: white; /* Letra blanca */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 30px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar el cursor al pasar por el botón */
+    transition: background-color 0.3s; /* Transición suave al cambiar el color de fondo */
+    justify-content: right;
+    margin-left: 500px;
+
+}
+
+/* Efecto hover */
+.post-submit:hover {
+    background-color: #0056b3; /* Cambiar a un tono más oscuro al pasar el mouse */
+}
+
+

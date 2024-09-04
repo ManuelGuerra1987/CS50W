@@ -1,0 +1,78 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+
+{% if user.is_authenticated %}
+<div class="form-container">
+
+  <form action="{% url 'create' %}" method="post">
+      {% csrf_token %}
+
+  
+      
+      <textarea id="content" name="content" maxlength="255" required placeholder="What is happening?!"></textarea><br><br>
+  
+      
+      <div class="button-container"></div>
+      <button type="submit" class="post-submit">Post</button>
+      </div>
+  </form>
+</div>
+{% endif %}
+
+{% for tweet in tweets %}
+            
+<div class="tweet" data-id="{{ tweet.id }}">
+    <a  href="{% url 'profile' tweet.owner %}"><strong>@{{ tweet.owner }}</strong> </a>
+
+    <div class="content">
+      <span> {{ tweet.content }}</span>
+      {% if tweet.owner.id == request.user.id %}
+      <button  class="edit" data-info="{{tweet.content}}">Edit</button>
+      {% endif %}
+    </div>
+
+    <div class="edit_content" style="display: none;">
+        <form id="edit-form">
+            <textarea class="form-control" id="tweet_edited" placeholder="Body"></textarea>
+            <button  class="save_edit">Save</button>
+        </form>
+    </div>
+
+    <p> {{ tweet.timestamp }}</p>
+    <div class="like-count">
+      {% if user.is_authenticated %}
+      <button  class="like" ><img src="{% static 'network/heart.png' %}" alt="Like" ></button>
+      {% endif %} 
+      <span>Likes: </span>
+      <span class="like-count-value">{{tweet.users_liked.count}}</span>
+    </div>
+ 
+</div>
+
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+      {% if tweets.has_previous %}
+        <a href="?page={{ tweets.previous_page_number }}">previous</a>
+      {% endif %}
+  
+      <span class="current">
+        Page {{ tweets.number }} of {{ tweets.paginator.num_pages }}.
+      </span>
+  
+      {% if tweets.has_next %}
+        <a href="?page={{ tweets.next_page_number }}">next</a>
+      {% endif %}
+    </span>
+  </div>
+
+{% endblock %}
+
+
+
+
+

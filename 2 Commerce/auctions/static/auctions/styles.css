@@ -1,0 +1,131 @@
+.bg-light-blue {
+    background-color: #b6823f; /* Celeste claro */
+    width: 100%;
+    margin-top: 40px; /* Ajusta el valor según lo que necesites */
+    margin-bottom: 20px; /* Ajusta el valor según lo que necesites */
+}
+
+.nav-link-custom {
+    color: #040805de; /* Verde, por ejemplo */
+}
+
+
+body {
+    padding: 10px;
+    background-color: #f8f9fa94;
+}
+
+.auction-item {
+    background-color: #e5e5eeab; 
+    border: 1px solid #132f33; /* Borde de un color más oscuro para dar contraste */
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 10px; /* Bordes redondeados para un efecto más suave */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
+    width: 100%;
+}
+
+.auction_title {
+    color: #131211ea; /* Cambia esto por el color que desees */
+    font-size: 40px; /* Cambia esto por el tamaño que desees */
+    text-decoration: none; /* Para eliminar el subrayado, opcional */
+    font-weight: 700;
+}
+
+.red_back {
+    background-color: #e45050; 
+    border: 1px solid #132f33; /* Borde de un color más oscuro para dar contraste */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px; /* Bordes redondeados para un efecto más suave */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
+    width: 200px;
+}
+
+
+
+
+
+.form-container {
+    border: 2px solid #ccc; /* Color del borde */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    background-color: #f9f9f9; /* Color de fondo */
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    margin-bottom: 1px;
+    font-weight: bold;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+    margin-bottom: 1px; /* Espaciado entre campos */
+    padding: 3px;
+    border-radius: 5px; /* Bordes redondeados para campos */
+    border: 1px solid #ccc; /* Color del borde para campos */
+    width: 100%; /* Ancho completo de los campos */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total del campo */
+}
+
+.form-container button {
+    padding: 10px 20px;
+    border-radius: 5px; /* Bordes redondeados para el botón */
+    border: none;
+    background-color: #b6823f; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    font-size: 16px;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.form-container button:hover {
+    background-color: #e78a10; /* Color de fondo del botón al pasar el cursor */
+}
+
+
+
+
+
+
+
+
+
+
+
+.auction-container {
+    margin: 20px;
+}
+
+.auction-actions {
+    margin-bottom: 20px;
+}
+
+.auction-details {
+    margin-bottom: 20px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.comment-item {
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin-right: 5px;
+    background-color: #b6823f;
+}
+
+.alert {
+    margin-top: 20px;
+}

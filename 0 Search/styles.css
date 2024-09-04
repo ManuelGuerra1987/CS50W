@@ -1,0 +1,57 @@
+.blue { color: rgb(34, 12, 228); }
+.red { color: rgb(228, 16, 16); }
+.yellow { color: rgb(202, 221, 27); }
+.green { color: rgb(26, 207, 50); }
+
+.input-rounded {
+    border: 0.5px solid #8d8a8a; /* Color del borde */
+    border-radius: 20px; /* Radio de redondeo */
+    padding: 10px; /* Espaciado interno */
+    width: 500px;
+    box-sizing: border-box; /* Asegura que el padding y el borde estén incluidos en el ancho total */
+}
+
+.link_container{
+    display: flex;
+    justify-content: right;
+}
+
+.link{
+
+    margin-right: 10px;
+    display: block;
+    color: black;
+    text-decoration: none; 
+}
+
+.adv_row{
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    
+}
+
+.adv_left{
+    width: 190px;
+    margin-top: 5px;
+}
+
+.adv_right{
+    width: 420px;
+    margin-top: 5px;
+}
+
+.adv-button {
+    background-color: rgb(24, 107, 231); 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    justify-content: right;
+    margin-top: 20px;
+    margin-left: 200px;
+  }
+
+
+

@@ -28,7 +28,7 @@
     <a  href="{% url 'profile' tweet.owner %}"><strong>@{{ tweet.owner }}</strong> </a>
 
     <div class="content">
-      <span> {{ tweet.content }}</span>
+      <span class="content-span"> {{ tweet.content }}</span>
       {% if tweet.owner.id == request.user.id %}
       <button  class="edit" data-info="{{tweet.content}}">Edit</button>
       {% endif %}

@@ -189,7 +189,8 @@ def edit(request, tweet_id):
             tweet.content = data["content"]
 
         tweet.save()
-        return JsonResponse({'message': 'Tweet updated successfully'}, status=200)
+        content = tweet.content
+        return JsonResponse({'content': content}, status=200)  
     
 
 @csrf_exempt

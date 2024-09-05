@@ -28,10 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
             fetch(`/edit/${tweetId}`, {
                 method: 'PUT',
-                body: JSON.stringify({
-                    content: content
-                })
+                body: JSON.stringify({content: content})
               })
+            .then(response => response.json()) 
+            .then(data => {
+                tweetDiv.querySelector('.content-span').textContent = data.content;
+            });
+
+    
+            tweetDiv.querySelector('.content').style.display = 'block';
+            tweetDiv.querySelector('.edit_content').style.display = 'none';
         });
     });
 

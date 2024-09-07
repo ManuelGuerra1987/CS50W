@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from .models import User, Tweet
@@ -92,7 +92,7 @@ def create(request):
 def profile(request, name):
 
     if request.method == "GET":   
-        user_profile = get_object_or_404(User, username=name)
+        user_profile = User.objects.get(username=name)
 
         followers = user_profile.followers.all()
         following = user_profile.following.all()
@@ -121,9 +121,9 @@ def profile(request, name):
 def follow(request):
     if request.method == "POST":
         user_follows_id = request.POST.get("user_follows")
-        user_follows = get_object_or_404(User, id=int(user_follows_id))
+        user_follows = User.objects.get(id=int(user_follows_id))
         user_followed_id = request.POST.get("user_followed")
-        user_followed = get_object_or_404(User, id=int(user_followed_id))
+        user_followed = User.objects.get(id=int(user_followed_id))
 
         user_follows.following.add(user_followed)
         
@@ -134,15 +134,14 @@ def follow(request):
 def unfollow(request):
     if request.method == "POST":
         user_unfollows_id = request.POST.get("user_unfollows")
-        user_unfollows = get_object_or_404(User, id=int(user_unfollows_id))
+        user_unfollows = User.objects.get(id=int(user_unfollows_id))
         user_unfollowed_id = request.POST.get("user_unfollowed")
-        user_unfollowed = get_object_or_404(User, id=int(user_unfollowed_id))
+        user_unfollowed = User.objects.get(id=int(user_unfollowed_id))
 
         user_unfollows.following.remove(user_unfollowed)
         
         return HttpResponseRedirect(reverse("profile", kwargs={'name': user_unfollowed.username}))      
     
-
 
 @login_required    
 def following(request):
@@ -150,15 +149,15 @@ def following(request):
     lista_following = request.user.following.all()
     lista_following_usernames = []
 
-    for user_ in lista_following:
-        lista_following_usernames.append(user_.username)
+    for user in lista_following:
+        lista_following_usernames.append(user.username)
 
     lista_all_tweets = Tweet.objects.all().order_by('-timestamp')
     lista_tweets_following = [] 
 
-    for tweet_ in lista_all_tweets:
-        if tweet_.owner.username in lista_following_usernames:
-            lista_tweets_following.append(tweet_)
+    for tweet in lista_all_tweets:
+        if tweet.owner.username in lista_following_usernames:
+            lista_tweets_following.append(tweet)
 
 
    

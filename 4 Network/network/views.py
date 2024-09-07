@@ -17,14 +17,7 @@ def index(request):
     page_number = request.GET.get('page')
     tweets_page = paginator.get_page(page_number)
 
-    if request.user.is_authenticated:
-        tweets_liked = request.user.liked_tweets.all()
-
-    else:
-        tweets_liked = []    
-
-
-    return render(request, "network/index.html", {'tweets': tweets_page, 'tweets_liked': tweets_liked})
+    return render(request, "network/index.html", {'tweets': tweets_page})
 
 
 def login_view(request):
@@ -95,6 +88,7 @@ def create(request):
         return  HttpResponseRedirect(reverse('index'))
     
 
+@login_required
 def profile(request, name):
 
     if request.method == "GET":   
@@ -203,7 +197,7 @@ def like(request, tweet_id):
         tweet = Tweet.objects.get(pk=tweet_id)
         user = request.user
 
-        if user in tweet.users_liked.all():
+        if user in tweet.users_liked.all(): 
             tweet.users_liked.remove(user)
         else:
             tweet.users_liked.add(user)    
